@@ -1,0 +1,38 @@
+{
+    "name": "feimaAutoComplete",
+    "displayName": "feimaAutoComplete",
+    "description": "飞马代码自动补全插件",
+    "version": "0.2.5",
+    "publisher": "houxueping",
+    "icon": "images/icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/2640952808/feimaCodeComplete.git"
+    },
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/script.json"
+            },
+            {
+                "language": "javascriptreact",
+                "path": "./snippets/script.json"
+            },
+            {
+                "language": "typescript",
+                "path": "./snippets/script.json"
+            },
+            {
+                "language": "typescriptreact",
+                "path": "./snippets/script.json"
+            }
+        ]
+    }
+}
