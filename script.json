@@ -1,0 +1,33 @@
+{
+  "DataSet-queryField-init": {
+    "prefix": ["setr","setri"],
+    "body": [
+      "{", 
+      "\tsize: '${1}small',", 
+      "\tdata: [{ label: '成功', value: 'success' },{ label: '信息', value: 'info' },{ label: '警告', value: 'warning' }]", 
+      "}$0"
+    ],
+    "description": "新建一条 queryField"
+  },
+  "DataSet-field-init": {
+    "prefix": "setcfg",
+    "body": [
+      "{", 
+      "\tname: '${1}',", 
+      "\ttype: '${2|boolean,number,string,date,dateTime,time,week,month,year,email,url,intl,object|}',",  
+      "\tlabel: '${3}',",
+      "}$0"
+    ],
+    "description": "新建一条 field"
+  },
+  "DateTimeSetter": {
+    "prefix": "setcfgD",
+    "body": [
+      "{",
+      "\ttype: '${1}dateTime'",
+      "\tformat: '${2|YYYY-MM-DD HH:mm:ss|}'",
+      "}"
+    ],
+    "description": "新建一条 DateTimeSetter"
+  }
+}
