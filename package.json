@@ -7,7 +7,7 @@
     "icon": "images/icon.png",
     "repository": {
         "type": "git",
-        "url": "https://github.com/2640952808/feimaCodeComplete.git"
+        "url": "https://github.com/sansecao/feimaAutoCompltet"
     },
     "engines": {
         "vscode": "^1.5.0"
