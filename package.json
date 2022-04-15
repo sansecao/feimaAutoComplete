@@ -2,12 +2,12 @@
     "name": "feimaAutoComplete",
     "displayName": "feimaAutoComplete",
     "description": "飞马代码自动补全插件",
-    "version": "0.2.5",
+    "version": "0.2.6",
     "publisher": "houxueping",
     "icon": "images/icon.png",
     "repository": {
         "type": "git",
-        "url": "https://github.com/sansecao/feimaAutoCompltet"
+        "url": "https://github.com/sansecao/feimaAutoComplete"
     },
     "engines": {
         "vscode": "^1.5.0"
