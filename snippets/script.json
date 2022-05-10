@@ -1,33 +1,332 @@
 {
-  "DataSet-queryField-init": {
-    "prefix": ["setr","setri"],
+  "Setter-init": {
+    "prefix": "setr",
     "body": [
-      "{", 
-      "\tsize: '${1}small',", 
-      "\tdata: [{ label: '成功', value: 'success' },{ label: '信息', value: 'info' },{ label: '警告', value: 'warning' }]", 
-      "}$0"
+      "setter"
     ],
-    "description": "新建一条 queryField"
+    "description": "新建一个setter"
   },
-  "DataSet-field-init": {
+  "SetterConfig-init": {
     "prefix": "setcfg",
     "body": [
-      "{", 
-      "\tname: '${1}',", 
-      "\ttype: '${2|boolean,number,string,date,dateTime,time,week,month,year,email,url,intl,object|}',",  
-      "\tlabel: '${3}',",
+      "setterConfig"
+    ],
+    "description": "新建一个setter"
+  },
+  "NumberSetter": {
+    "prefix": [
+      "setn",
+      "setter:N",
+      "setrn",
+      "settern",
+      "NumberSetter"
+    ],
+    "body": [
+      "setter: 'NumberSetter'"
+    ],
+    "description": "数字输入框setter"
+  },
+  "NumberSetter-config": {
+    "prefix": [
+      "setcfgn",
+      "setterConfig: { number }",
+      "setterConfig: Number"
+    ],
+    "body": [
+      "setterConfig: {", 
+      "\tmin: ${1:0},",
+      "\tmax: ${2:100},",
+      "\tstep: ${3:1}",
       "}$0"
     ],
-    "description": "新建一条 field"
+    "description": "数字输入框配置setter"
   },
-  "DateTimeSetter": {
-    "prefix": "setcfgD",
+
+  "SliderSetter": {
+    "prefix": [
+      "sets",
+      "setter:S",
+      "setrs",
+      "setters",
+      "SliderSetter"
+    ],
     "body": [
-      "{",
-      "\ttype: '${1}dateTime'",
-      "\tformat: '${2|YYYY-MM-DD HH:mm:ss|}'",
+      "setter:'SliderSetter'"
+    ],
+    "description": "slider setter"
+  },
+  "SliderSetter-config": {
+    "prefix": [
+      "setcfgs",
+      "setterConfig: { slider }",
+      "setterConfig: Slider"
+    ],
+    "body": [
+      "setterConfig: {", 
+      "\tmin: ${1:0},",
+      "\tmax: ${2:100},",
+      "\tstep: ${3:1}",
+      "}$0"
+    ],
+    "description": "slider setter"
+  },
+
+  "RadioSetter": {
+    "prefix": [
+      "setr",
+      "setter:R",
+      "setrr",
+      "setterr",
+      "RadioSetter"
+    ],
+    "body": [
+      "setter: 'RadioSetter'"
+    ],
+    "description": "新建一个单选框setter"
+  },
+  "RadioSetter-config": {
+    "prefix": [
+      "setcfgr",
+      "setterConfig: { radio }",
+      "setterConfig: Radio"
+    ],
+    "body": [
+      "setterConfig: {", 
+      "\tsize: '${1:small}',", 
+      "\tdata:[", 
+      "\t\t{ label: '${2:成功}', value: '${3:success}' },",
+      "\t\t{ label: '${4:信息}', value: '${5:info}' },",  
+      "\t\t{ label: '${6:警告}', value: '${7:warning}' }",
+      "\t]",
+      "}$0"
+    ],
+    "description": "新建一个单选框setter配置"
+  },
+
+  "DateTimeSetter": {
+    "prefix": [
+      "setd",
+      "setter:D",
+      "setrd",
+      "setterd",
+      "DateTimeSetter"
+    ],
+    "body": [
+      "setter: 'DateTimeSetter'"
+    ],
+    "description": "新建一个日期时间setter"
+  },
+
+  "DateTimeSetter-config": {
+    "prefix": [
+      "setcfgd",
+      "setterConfig: { dateTime }",
+      "setterConfig: DateTimeSetter"
+    ],
+    "body": [
+      "setterConfig: {",
+      "\ttype: '${1:dateTime}'",
+      "\tformat: '${2:YYYY-MM-DD HH:mm:ss}'",
       "}"
     ],
-    "description": "新建一条 DateTimeSetter"
+    "description": "新建一个日期时间setter配置"
+  },
+
+  "EditorSetter": {
+    "prefix": [
+      "sete",
+      "setter:E",
+      "settered",
+      "setred",
+      "EditorSetter"
+    ],
+    "body": [
+      "setter: 'EditorSetter'"
+    ],
+    "description": "编辑器setter"
+  },
+
+  "EditorSetter-config": {
+    "prefix": [
+      "setcfged",
+      "setterConfig: EditorSetter",
+      "setterConfig: { editor }"
+    ],
+    "body": [
+      "setterConfig: {", 
+      "\tlabel: '${1:编辑}',", 
+      "\ttype: '${2:JSExpression}'", 
+      "\tdefaultValue: function(res) {",
+        "\t\tconsole.log('res', res);",
+      "\t}",
+      "}$0"
+    ],
+    "description": "编辑器setter配置"
+  },
+
+  "EventSetter": {
+    "prefix": [
+      "setrev",
+      "setterev",
+      "EventSetter"
+    ],
+    "body": [
+      "setter: 'EventSetter'"
+    ],
+    "description": "事件setter"
+  },
+
+  "EventSetter-config": {
+    "prefix": [
+      "setterConfig: EventSetter",
+      "setcfgev",
+      "setterConfig: { event }"
+    ],
+    "body": [
+      "setterConfig: [\t\tname:${1:'title'},", 
+      "\tlabel: '${1:当取消时}',", 
+      "\ttype:'${2:onCancel}'", 
+      "\tdefaultValue: function(res) {",
+        "\t\tconsole.log('res', res);",
+      "\t}",
+      "},$3",
+      "{", 
+      "\tlabel: '${4:当确认时}',", 
+      "\ttype:'${5:onOk}'", 
+      "\tdefaultValue: function(res) {",
+        "\t\tconsole.log('res', res);",
+      "\t}",
+      "}]$0"
+    ],
+    "description": "新建一个事件setter"
+  },
+  "RemoteSetter": {
+    "prefix": [
+      "setrm",
+      "setter:Re",
+      "setrrm",
+      "setterrm",
+      "RemoteSetter"
+    ],
+    "body": [
+      "setter: 'RemoteSetter'"
+    ],
+    "description": "请求setter"
+  },
+  "RemoteSetter-config": {
+    "prefix": [
+      "setterConfig: RemoteSetter",
+      "setcfgre",
+      "setterConfig: { remote }"
+    ],
+    "body": [
+      "setterConfig: {", 
+      "\tremoteNamePrefix: ${1:''},", 
+      "\tvariableInitialValue:${2:''},", 
+      "\tonlyRemote: ${3:false},",
+      "\tdefaultBeforeFetch: ${4:''},", 
+      "\tdefaultAfterFetch:${5:''},", 
+      "\tvariable: ${6:{}}",
+      "}$0"
+    ],
+    "description": "请求setter配置"
+  },
+  "ArraySetter": {
+    "prefix": [
+      "seta",
+      "setter:A",
+      "setra",
+      "settera",
+      "ArraySetter"
+    ],
+    "body": [
+      "setter: 'ArraySetter'"
+    ],
+    "description": "数组setter"
+  },
+  "ArraySetter-config": {
+    "prefix": [
+      "setterConfig: ArraySetter",
+      "setcfga",
+      "setterConfig: { array }"
+    ],
+    "body": [
+      "setterConfig: {", 
+      "\tsubPropConf: [{",
+      "\t\tname:${1:'title'},",
+      "\t\ttitle:'${2:列名}',",
+      "\t\tuseExp:${3:true},",
+      "\t\tinitialValue:'${4:姓名}',",
+      "\t\tsetter:'${5:InputSetter}'",
+      "\t}],", 
+      "\tnameArr:['${6:title}']",
+      "}$0"
+    ],
+    "description": "新建一个数组setter"
+  },
+  "InputSetter": {
+    "prefix": [
+      "seti",
+      "setter:I",
+      "setri",
+      "setteri",
+      "InputSetter"
+    ],
+    "body": [
+      "setter: 'InputSetter'"
+    ],
+    "description": "单行文本输入框setter"
+  },
+  "TextAreaSetter": {
+    "prefix": [
+      "sett",
+      "setter:T",
+      "setrt",
+      "settert",
+      "TextAreaSetter"
+    ],
+    "body": [
+      "setter: 'TextAreaSetter'"
+    ],
+    "description": "多行文本输入框setter"
+  },
+  "SwitchSetter": {
+    "prefix": [
+      "setsw",
+      "setter:Sw",
+      "setrsw",
+      "settersw",
+      "SwitchSetter"
+    ],
+    "body": [
+      "setter: 'SwitchSetter'"
+    ],
+    "description": "开关setter"
+  },
+  "ColorSetter": {
+    "prefix": [
+      "setc",
+      "setter:C",
+      "setrc",
+      "setterc",
+      "ColorSetter"
+    ],
+    "body": [
+      "setter: 'ColorSetter'"
+    ],
+    "description": "颜色选择setter"
+  },
+  "FormValidationSetter": {
+    "prefix": [
+      "setf",
+      "setter:F",
+      "setrf",
+      "setterf",
+      "FormValidationSetter"
+    ],
+    "body": [
+      "setter: 'FormValidationSetter'"
+    ],
+    "description": "表单校验规则setter"
   }
 }

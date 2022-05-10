@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/feimaAutoComplete.iml" filepath="$PROJECT_DIR$/.idea/feimaAutoComplete.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/pegasusAutoComplete.iml" filepath="$PROJECT_DIR$/.idea/pegasusAutoComplete.iml" />
     </modules>
   </component>
 </project>
