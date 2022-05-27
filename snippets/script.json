@@ -155,10 +155,10 @@
     "body": [
       "setterConfig: {", 
       "\tlabel: '${1:编辑}',", 
-      "\ttype: '${2:JSExpression}'", 
-      "\tdefaultValue: function(res) {",
+      "\ttype: '${2:JSExpression}',", 
+      "\tdefaultValue: `function(res) {",
         "\t\tconsole.log('res', res);",
-      "\t}",
+      "\t}`",
       "}$0"
     ],
     "description": "编辑器setter配置"

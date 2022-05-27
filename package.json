@@ -2,7 +2,7 @@
     "name": "pegasusAutoComplete",
     "displayName": "pegasusAutoComplete",
     "description": "飞马代码自动补全插件",
-    "version": "1.0.1",
+    "version": "1.0.4",
     "publisher": "houxueping",
     "icon": "images/icon.png",
     "repository": {
